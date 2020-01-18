@@ -2,7 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const addon = require('./addon.node');
+
 const App: React.FC = () => {
+  console.log(addon);
   return (
     <div className="App">
       <header className="App-header">
