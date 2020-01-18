@@ -1,4 +1,6 @@
 import { app, BrowserWindow } from "electron";
+// import { URL } from "url";
+const url = require('url');
 import * as path from "path";
 const addon = require('../build/Release/addon');
 
@@ -17,7 +19,9 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, "../index.html"));
+  // mainWindow.loadFile(path.join(__dirname, "../index.html"));
+  const startUrl = process.env.ELECTRON_START_URL || url.format({pathname: path.join(__dirname, 'src/frontend/build/index.html'),protocol: 'file:',slashes: true});
+  mainWindow.loadURL(startUrl);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();

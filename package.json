@@ -6,7 +6,10 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "npm run build && electron ./dist/main.js"
+    "start": "npm run build && electron ./dist/main.js",
+    "react-start": "cd ./src/frontend && yarn start",
+    "electron-start": "node electron-wait-react",
+    "dev": "nf start -p 3000"
   },
   "repository": "https://github.com/mfakhrusy/fem-app",
   "keywords": [
@@ -22,6 +25,7 @@
   "devDependencies": {
     "electron": "^6.0.8",
     "electron-rebuild": "^1.8.8",
+    "foreman": "^3.0.1",
     "tslint": "^5.19.0",
     "typescript": "^3.6.0"
   }
